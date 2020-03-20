@@ -48,7 +48,7 @@ const Countdown = () => {
       <h2 className={styles.countdownText}>
         {timerComponents.length ? (
           <Fragment>
-            {timerComponents} <p>left until you birthday Emi</p>
+            {timerComponents} <p>left until your birthday Emi</p>
           </Fragment>
         ) : (
           <span>Time's up!</span>
