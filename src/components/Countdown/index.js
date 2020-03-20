@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
+
+import styles from "./countdown.scss";
 
 const calculateTimeLeft = () => {
   const today = new Date();
@@ -35,16 +37,23 @@ const Countdown = () => {
 
     timerComponents.push(
       <span key={interval}>
-        {timeLeft[interval]} {interval}{" "}
+        <span className={styles.timeLeftText}>{timeLeft[interval]} </span>
+        {interval}{" "}
       </span>
     );
   });
 
   return (
-    <div>
-      <h3>
-        {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-      </h3>
+    <div className={styles.countdownWrapper}>
+      <h2 className={styles.countdownText}>
+        {timerComponents.length ? (
+          <Fragment>
+            {timerComponents} <p>left until you birthday Emi</p>
+          </Fragment>
+        ) : (
+          <span>Time's up!</span>
+        )}
+      </h2>
     </div>
   );
 };

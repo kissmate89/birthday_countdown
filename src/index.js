@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 
 import Header from "./components/Header";
@@ -8,10 +8,12 @@ import "./assets/styles/global.scss";
 
 const Main = () => {
   return (
-    <div>
+    <Fragment>
       <Header />
-      <Countdown />
-    </div>
+      <main className="main">
+        <Countdown />
+      </main>
+    </Fragment>
   );
 };
 

@@ -4,7 +4,7 @@ import styles from "./header.scss";
 
 const Header = () => (
   <div className={styles.headerWrapper}>
-    <h1>Emi's birthday countdown</h1>
+    <h1 className={styles.headerTitle}>Emi's birthday countdown</h1>
   </div>
 );
 

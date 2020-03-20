@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -36,7 +37,10 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: true
+              modules: {
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+                context: path.resolve(__dirname, "src")
+              }
             }
           },
           {
