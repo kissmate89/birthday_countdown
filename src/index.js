@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 
 import Header from "./components/Header";
-import Countdown from "./components/Countdown";
+import Content from "./components/Content";
 
 import "./assets/styles/global.scss";
 
@@ -11,7 +11,7 @@ const Main = () => {
     <Fragment>
       <Header />
       <main className="main">
-        <Countdown />
+        <Content />
       </main>
     </Fragment>
   );

@@ -12,11 +12,10 @@
 
 .countdownText {
   padding: 10px 20px 15px 20px;
-  border: 5px solid $borderColor;
   border-radius: 20px;
   text-align: center;
-
-  box-shadow: 3px 3px 5px 6px $highlightColor;
+  background-color: $backgroundColor;
+  box-shadow: 20px 20px 39px #d9c7ba, -20px -20px 39px #fffffc;
 
   p {
     margin-bottom: 0;
