@@ -4,13 +4,15 @@ const path = require("path");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
-  filename: "./index.html"
+  filename: "./index.html",
 });
 
 const miniCssExtractPlugin = new MiniCssExtractPlugin({
   filename: "[name].[hash].css",
-  chunkFilename: "[id].[hash].css"
+  chunkFilename: "[id].[hash].css",
 });
+
+console.log(process.env.DAY);
 
 module.exports = {
   module: {
@@ -19,16 +21,16 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
-          }
-        ]
+            loader: "html-loader",
+          },
+        ],
       },
       {
         test: /\.s[ac]ss$/i,
@@ -39,27 +41,27 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: "[name]__[local]--[hash:base64:5]",
-                context: path.resolve(__dirname, "src")
-              }
-            }
+                context: path.resolve(__dirname, "src"),
+              },
+            },
           },
           {
             loader: "sass-loader",
             options: {
-              sourceMap: true
-            }
-          }
-        ]
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: "file-loader"
-          }
-        ]
-      }
-    ]
+            loader: "file-loader",
+          },
+        ],
+      },
+    ],
   },
-  plugins: [htmlPlugin, miniCssExtractPlugin]
+  plugins: [htmlPlugin, miniCssExtractPlugin],
 };
