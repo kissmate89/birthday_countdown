@@ -8,7 +8,7 @@ import styles from "./content.scss";
 
 const calculateTimeLeft = () => {
   const today = new Date();
-  const difference = +new Date(`${today.getFullYear()}-05-19`) - +today;
+  const difference = +new Date(`${today.getFullYear()}-05-20`) - +today;
   let timeLeft = {};
 
   if (difference > 0) {
